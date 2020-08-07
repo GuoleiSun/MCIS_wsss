@@ -1,0 +1,19 @@
+train_net: "./exp2/train_resnet_fov.prototxt"
+# lr for fine-tuning should be lower than when starting from scratch
+#debug_info: true
+base_lr: 1e-3
+lr_policy: "poly"
+power: 0.9
+#gamma: 0.1
+iter_size: 10
+# stepsize should also be lower, as we're closer to being done
+#stepsize: 12000
+average_loss: 20
+display: 20
+max_iter: 16000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "exp2/snapshot/res_fov2a"
+# uncomment the following to default to CPU mode solving
+# solver_mode: CPU 
