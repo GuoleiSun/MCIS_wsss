@@ -18,7 +18,7 @@ Authors: [Guolei Sun](https://github.com/GuoleiSun), [Wenguan Wang](https://site
 
 1. Install Caffe: install [prerequisites](https://caffe.berkeleyvision.org/install_apt.html), then go to segmentation folder and run "make all -j4 && make pycaffe" to compile. To continue, make sure Caffe is installed correctly by referring to [Caffe](https://caffe.berkeleyvision.org/installation.html#compilation).
 
-2. Download the [PASCAL VOC 2012](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) and pretrained segmentation [model](). Put the segmentation model in folder segmentation/examples/seg/exp2/model/
+2. Download the [PASCAL VOC 2012](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) and pretrained segmentation [model](https://drive.google.com/file/d/1BgT8nTIs4ts_W_7JX0WTg5jb5EetnAVz/view?usp=sharing). Put the segmentation model in folder segmentation/examples/seg/exp2/model/
 
 3. Go to segmentation/examples/seg, change the dataset path when necessary, and run "python eval_res.py gpu_id exp2 model". You will get mIoU score of 66.2 on PASCAL VOC12 val set.
 
