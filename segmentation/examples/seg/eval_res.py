@@ -372,7 +372,7 @@ if __name__ == '__main__':
 
     print("here: ",weights)
 
-    caffemodel = folder + '/'+weights+'/res_fov2a_iter.caffemodel'
+    caffemodel = folder + '/'+weights+'/res_fov2a.caffemodel'
     deploy_file = './deploy_resnet_fov.prototxt'
 
     data_folder = '../../data/VOCdevkit/VOC2012/'
