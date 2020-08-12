@@ -7,7 +7,7 @@ import logging
 from datetime import datetime
 import scipy.io as sio
 import pydensecrf.densecrf as dcrf
-from utils import do_crf, do_crf1, do_crf2
+from utils import do_crf1
 import multiprocessing
 
 caffe_root = '../../'
