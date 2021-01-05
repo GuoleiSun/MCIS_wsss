@@ -30,7 +30,7 @@ The training contains following steps
 
 2. Generate pseudo ground-truth. Run "python gen_gt.py".
 
-3. Train a fully supervised semantic segmentation model. Go to "segmentation/examples/seg/" folder.
+3. Train a fully supervised semantic segmentation model. Go to "segmentation/examples/seg/" folder and run "./train_res.sh exp2 gpu_id", where "gpu_id" is the gpu to conduct training. Note that you need to adjust training list in "exp2/train_ins.txt"
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
