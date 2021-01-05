@@ -28,9 +28,9 @@ The training contains following steps
 
 1. Train a co-attention classifier. The implementation of co-attention can be found [here](https://github.com/GuoleiSun/MCIS_wsss/blob/11f116f76a981a00bce67d8602a4ba866a94fe83/Classifier/models/vgg.py#L171). Go to "Classifier" folder and run "./train.sh". After the training is done, to generate localization maps, run "./test.sh".
 
-2. Generate pseudo ground-truth. Run "python gen_gt.py".
+2. Generate pseudo ground-truth. Adjust paths in "gen_gt.py" and then run "python gen_gt.py".
 
-3. Train a fully supervised semantic segmentation model. Go to "segmentation/examples/seg/" folder and run "./train_res.sh exp2 gpu_id", where "gpu_id" is the gpu to conduct training. Note that you need to adjust training list in "exp2/train_ins.txt"
+3. Train a fully supervised semantic segmentation model. Go to "segmentation/examples/seg/" folder and run "./train_res.sh exp2 gpu_id", where "gpu_id" is the gpu to conduct training. Note that you need to adjust training list in "exp2/train_ins.txt", where you should include the path of pseudo ground-truth masks.
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
