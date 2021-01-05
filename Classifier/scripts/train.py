@@ -58,36 +58,8 @@ def save_checkpoint(args, state, is_best, filename='checkpoint.pth.tar'):
         shutil.copyfile(savepath, os.path.join(args.snapshot_dir, 'model_best.pth.tar'))
 
 def get_model(args):
-    if args.arch=="vgg16":
-        model = vgg.vgg16(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="vgg16_new":
-        print("vgg16_new is used")
-        model = vgg.vgg16_new(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="vgg16_new2":
-        print("vgg16_new2 is used")
-        model = vgg.vgg16_new2(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel":
-        print("coattention model is used")
-        model = vgg.coattentionmodel(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel2":
-        print("coattention2 model (self attention is added) is used")
-        model = vgg.coattentionmodel2(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel3":
-        print("coattention3 model (self attention is added) is used")
-        model = vgg.coattentionmodel3(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel6":
-        print("coattention6 model (self attention is added) is used")
-        model = vgg.coattentionmodel6(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel11_2":
-        ## the one used in the paper
-        print("coattention11_2 model (self attention is added) is used")
-        model = vgg.coattentionmodel11_2(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    elif args.arch=="coattentionmodel12":
-        print("coattention12 model (self attention is added) is used")
-        model = vgg.coattentionmodel12(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
-    else:
-        print("please specify correct arch to use. For original OAA, use vgg16.")
-        return
+    model = vgg.coattentionmodel(num_classes=args.num_classes)
+    
     model = torch.nn.DataParallel(model).cuda()
     param_groups = model.module.get_parameter_groups()
     optimizer = optim.SGD([
