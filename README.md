@@ -20,17 +20,17 @@ Authors: [Guolei Sun](https://github.com/GuoleiSun), [Wenguan Wang](https://site
 
 2. Download the [PASCAL VOC 2012](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) and pretrained segmentation [model](https://drive.google.com/file/d/1BgT8nTIs4ts_W_7JX0WTg5jb5EetnAVz/view?usp=sharing). Put the segmentation model in folder segmentation/examples/seg/exp2/model/
 
-3. Go to segmentation/examples/seg, change the dataset path when necessary, and run "python eval_res.py gpu_id exp2 model". You will get mIoU score of 66.2 on PASCAL VOC12 val set.
+3. Go to segmentation/examples/seg, change the dataset path when necessary, and run "python eval_res.py gpu_id exp2 model", where "gpu_id" is the gpu to perform experiment. You will get mIoU score of 66.2 on PASCAL VOC12 val set.
 
 #### Training
 
 The training contains following steps
 
-1. Train a co-attention classifier. Go to "Classifier" folder and run "./train.sh"
+1. Train a co-attention classifier. Go to "Classifier" folder and run "./train.sh". To generate localization maps, run "./test.sh".
 
 2. Generate pseudo ground-truth. Run "python gen_gt.py".
 
-3. Train a fully supervised semantic segmentation model.
+3. Train a fully supervised semantic segmentation model. Go to "segmentation/examples/seg/" folder.
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
