@@ -22,9 +22,15 @@ Authors: [Guolei Sun](https://github.com/GuoleiSun), [Wenguan Wang](https://site
 
 3. Go to segmentation/examples/seg, change the dataset path when necessary, and run "python eval_res.py gpu_id exp2 model". You will get mIoU score of 66.2 on PASCAL VOC12 val set.
 
-#### To do
+#### Training
 
-coattention classifer
+The training contains following steps
+
+1. Train a co-attention classifier. Go to "Classifier" folder.
+
+2. Generate pseudo ground-truth.
+
+3. Train a fully supervised semantic segmentation model.
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
