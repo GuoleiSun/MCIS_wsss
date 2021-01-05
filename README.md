@@ -28,7 +28,7 @@ The training contains following steps
 
 1. Train a co-attention classifier. Go to "Classifier" folder and run "./train.sh"
 
-2. Generate pseudo ground-truth.
+2. Generate pseudo ground-truth. Run "python gen_gt.py".
 
 3. Train a fully supervised semantic segmentation model.
 
