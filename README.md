@@ -26,7 +26,7 @@ Authors: [Guolei Sun](https://github.com/GuoleiSun), [Wenguan Wang](https://site
 
 The training contains following steps
 
-1. Train a co-attention classifier. The implementation of co-attention can be found [here](https://github.com/GuoleiSun/MCIS_wsss/blob/11f116f76a981a00bce67d8602a4ba866a94fe83/Classifier/models/vgg.py#L171). Go to "Classifier" folder and run "./train.sh". After the training is done, to generate localization maps, run "./test.sh".
+1. Train a co-attention classifier. The implementation of co-attention can be found [here](https://github.com/GuoleiSun/MCIS_wsss/blob/7b1ed8982c29d5391bfe56b3e97051651e09e749/Classifier/models/vgg.py#L171). Go to "Classifier" folder and run "./train.sh". After the training is done, to generate localization maps, run "./test.sh".
 
 2. Generate pseudo ground-truth. Adjust paths in "gen_gt.py" and then run "python gen_gt.py". Saliency maps can be downloaded [here](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX).
 
