@@ -48,6 +48,6 @@ If you find the code and dataset useful in your research, please consider citing
 
 ### Acknowledgements 
 
-This repository is largely based on [OAA](https://github.com/PengtaoJiang/OAA) and thanks for their excellent work. We follow the same steps as [OAA](https://github.com/PengtaoJiang/OAA) to conduct WSSS. Thus, you may find answers to your questions from [OAA](https://github.com/PengtaoJiang/OAA).
+This repository is largely based on [OAA](https://github.com/PengtaoJiang/OAA) and thanks for their excellent work. We follow the same steps as [OAA](https://github.com/PengtaoJiang/OAA) to conduct WSSS. Hence, you may find answers to your questions from [OAA](https://github.com/PengtaoJiang/OAA).
 
 For questions, please contact sunguolei.kaust@gmail.com
