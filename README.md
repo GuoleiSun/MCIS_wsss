@@ -24,7 +24,7 @@ Authors: [Guolei Sun](https://github.com/GuoleiSun), [Wenguan Wang](https://site
 
 #### Training
 
-The training contains following steps
+The training process contains following steps：
 
 1. Train a co-attention classifier. The implementation of co-attention can be found [here](https://github.com/GuoleiSun/MCIS_wsss/blob/7b1ed8982c29d5391bfe56b3e97051651e09e749/Classifier/models/vgg.py#L171). Go to "Classifier" folder and run "./train.sh". After the training is done, to generate localization maps, run "./test.sh".
 
