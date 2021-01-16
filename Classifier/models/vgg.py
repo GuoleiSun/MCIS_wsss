@@ -187,10 +187,11 @@ class CoattentionModel(nn.Module):
         feature2_t = torch.transpose(feature2_flat,1,2).contiguous()
         feature2_corr = self.extra_linear_e(feature2_t)
 
-        A2 = torch.bmm(feature1_corr, feature2_flat)     # co-attention
+        A2 = torch.bmm(feature1_corr, feature2_flat)
+        # A2 = torch.bmm(feature1_corr, torch.transpose(feature2_corr,1,2))
 
-        A = F.softmax(A2, dim = 1)      # normalize across dim 1
-        B = F.softmax(torch.transpose(A2,1,2),dim=1)     # normalize across dim 0
+        A = F.softmax(A2, dim = 1)
+        B = F.softmax(torch.transpose(A2,1,2),dim=1)
         feature2_att = torch.bmm(feature1_flat, A).contiguous()
         feature1_att = torch.bmm(feature2_flat, B).contiguous()
         input1_att = feature1_att.view(-1, feature2.size()[1], fea_size1[0], fea_size1[1])  
