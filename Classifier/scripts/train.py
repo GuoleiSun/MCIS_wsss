@@ -2,6 +2,7 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 
+print(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 import torch
 import argparse
 import os
@@ -17,7 +18,7 @@ from torch.utils.data import DataLoader
 import torch.nn.functional as F
 from torch.autograd import Variable
 from utils import AverageMeter
-from utils.LoadData import train_data_loader, train_data_loader_normal_resize, train_data_loader_siamese, train_data_loader_siamese_more_augumentation
+from utils.LoadData import train_data_loader_siamese_more_augumentation
 from tqdm import trange, tqdm
 import random
 
@@ -58,8 +59,8 @@ def save_checkpoint(args, state, is_best, filename='checkpoint.pth.tar'):
         shutil.copyfile(savepath, os.path.join(args.snapshot_dir, 'model_best.pth.tar'))
 
 def get_model(args):
-    model = vgg.coattentionmodel(num_classes=args.num_classes)
-    
+    model = vgg.coattentionmodel(pretrained=True, num_classes=args.num_classes, att_dir=args.att_dir, training_epoch=args.epoch)
+
     model = torch.nn.DataParallel(model).cuda()
     param_groups = model.module.get_parameter_groups()
     optimizer = optim.SGD([
@@ -190,7 +191,7 @@ def train(args):
         steps_per_epoch = len(train_loader)
         
         validate(model, val_loader)
-        model.train()                ## moved here by guolei
+        model.train()                ## prepare for training
         index = 0  
         for idx, dat in enumerate(train_loader):
             _, _, input1, input2, input1_transforms, label1, label2= dat
@@ -201,15 +202,6 @@ def train(args):
                 input1=hide_patch(input1)
                 input2=hide_patch(input2)
                 input1_transforms=[hide_patch(i) for i in input1_transforms]
-
-            # if random.random()<0.5:
-            #     temp=input2.clone()
-            #     input2=input1.clone()
-            #     input1=temp
-
-            #     temp=label2.clone()
-            #     label2=label1.clone()
-            #     label1=temp
 
             img=[input1,input2]
             label=torch.cat([label1,label2])
