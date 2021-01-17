@@ -1,5 +1,5 @@
 #!/bin/sh
-EXP=exp1_more_augumentation_coattention11_2_epoch2_hs_0.0_3   ## means 50% chooses images with at least one common label while 50% totally random images
+EXP=exp1_mcis   ## means 50% chooses images with at least one common label while 50% totally random images
 
 ## hs means hide and seek
 
