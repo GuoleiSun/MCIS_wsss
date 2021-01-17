@@ -23,7 +23,7 @@ data_path = '/srv/beegfs-benderdata/scratch/specta/data/guolei/datasets-research
 train_lst_path = data_path + 'ImageSets/Segmentation/train_cls.txt'
 im_path = data_path + 'JPEGImages/'
 sal_path = './saliency_aug/'
-att_path = './runs2/exp1_more_augumentation_coattention11_2_epoch2_hs_0.0/att_clear_epoch10_multi_sampling3/'   # localization map path
+att_path = './runs2/exp1_mcis/att_clear_epoch10/'   # localization map path
 save_path = './proxy-gt/'
 
 if not exists(save_path):
