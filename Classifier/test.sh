@@ -1,5 +1,5 @@
 #!/bin/sh
-EXP=exp1_more_augumentation_coattention11_2_epoch2_hs_0.0_3
+EXP=exp1_mcis
 
 # CUDA_VISIBLE_DEVICES=0     
 python3 ./scripts/test.py \
@@ -11,6 +11,6 @@ python3 ./scripts/test.py \
     --input_size=256 \
 	  --num_classes=20 \
     --restore_from=./runs/${EXP}/model/pascal_voc_epoch_10.pth \
-    --save_dir=./runs/${EXP}/att_clear_epoch10_only_multi_sampling3/ \
+    --save_dir=./runs/${EXP}/att_clear_epoch10/ \
     
 ## add_feat means adding feature maps
