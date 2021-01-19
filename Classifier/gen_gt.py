@@ -18,7 +18,7 @@ palette = [0,0,0,  128,0,0,  0,128,0,  128,128,0,  0,0,128,  128,0,128,  0,128,1
 cats = ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow',
         'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tv']
 
-# set path for data
+# set path for data: adjust the following path as per your project
 data_path = '/srv/beegfs-benderdata/scratch/specta/data/guolei/datasets-research/weakly-semantic-seg/VOCdevkit/VOC2012/'
 train_lst_path = data_path + 'ImageSets/Segmentation/train_cls.txt'
 im_path = data_path + 'JPEGImages/'
