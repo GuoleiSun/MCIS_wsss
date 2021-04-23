@@ -1,6 +1,6 @@
 ## MCIS_wsss
 
-Code for Mining Cross-Image Semantics for Weakly Supervised Semantic Segmentation [ECCV 2020 (oral)]
+Code for Mining Cross-Image Semantics for Weakly Supervised Semantic Segmentation [ECCV 2020 paper (oral)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470341.pdf)
 
 CVPR 2020 [Learning from Imperfect Data (LID)](https://lidchallenge.github.io) workshop Best Paper Award and winner solution in WSSS Track of CVPR2020 LID challenge
 
